@@ -10,13 +10,13 @@ source /workspace/miniconda3/bin/activate
 # Initialize conda on all available shells
 conda init --all
 
-# Create arena-env
+# Open new terminal, Create arena-env
 conda create -n arena-env python=3.11 -y
 conda activate arena-env
 
 # (If dependencies are not installed)
-conda install -r ~/ARENA_3.0/requirements.txt
-conda install ipykernel --update-deps --force-reinstall -y
+pip install -r ARENA_3.0/requirements.txt
+# conda install ipykernel --update-deps --force-reinstall -y
 
 # I think this creates the arena-env python kernel
 python -m ipykernel install --user --name arena-env --display-name "Python (arena-env)"
