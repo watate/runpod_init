@@ -11,15 +11,18 @@ source /workspace/miniconda3/bin/activate
 conda init --all
 
 # Open new terminal, Create arena-env
-conda create -n arena-env python=3.11 -y
-conda activate arena-env
+conda create -p /workspace/arena-env python=3.11 -y
+conda activate /workspace/arena-env
 
 # (If dependencies are not installed)
 pip install -r ARENA_3.0/requirements.txt
 # conda install ipykernel --update-deps --force-reinstall -y
 
-# I think this creates the arena-env python kernel
+# This creates the arena-env python kernel
 python -m ipykernel install --user --name arena-env --display-name "Python (arena-env)"
+
+# For deleting huggingface cache
+rm -rf /workspace/.cache/huggingface
 
 
 # Old code
